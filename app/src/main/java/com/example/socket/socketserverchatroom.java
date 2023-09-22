@@ -86,54 +86,6 @@ public class socketserverchatroom extends AppCompatActivity {
     }
 
 
-//    class serverThread implements Runnable {
-//        @Override
-//        public void run() {
-//            try {
-//                ServerSocket serverSocket = new ServerSocket(SERVER_PORT);
-//
-//
-//                try {
-//                    while(true) {
-//                        socket = serverSocket.accept();
-//
-//
-//                        runOnUiThread(new Runnable() {
-//                            @Override
-//                            public void run() {
-//                                tvMessages.setText("Connected\n");
-//                            }
-//                        });
-//                        reader = new BufferedReader(new InputStreamReader(socket.getInputStream()));
-//                        //取得網路輸出串流
-//                        out = new PrintWriter(new BufferedWriter(
-//                                new OutputStreamWriter(socket.getOutputStream())),
-//                                true);
-//                        while ((tmp = reader.readLine()) != null) {
-//                            runOnUiThread(new Runnable() {
-//                                @Override
-//                                public void run() {
-//                                    tvMessages.append("收 " + socket.getInetAddress().getHostAddress()
-//                                            + ": " + tmp + "\n");
-//                                }
-//                            });
-//                        }
-//                    }
-//
-//
-//
-//                } catch (IOException e) {
-//                    Log.d("edapple",e.getMessage());
-//
-//                    e.printStackTrace();
-//
-//                }
-//            } catch (IOException e) {
-//                e.printStackTrace();
-//            }
-//        }
-//    }
-
     class serverThread implements Runnable {
         @Override
         public void run() {
@@ -157,7 +109,7 @@ public class socketserverchatroom extends AppCompatActivity {
                         new Thread(clientHandler).start();
                     }
                 } catch (IOException e) {
-                    Log.d("edapple", e.getMessage());
+                    Log.d("edapplee", e.getMessage());
                     e.printStackTrace();
                 }
             } catch (IOException e) {
